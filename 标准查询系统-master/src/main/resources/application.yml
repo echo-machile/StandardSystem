@@ -1,0 +1,35 @@
+server:
+  port: 8090
+#    ssl:
+#      protocol: TLS
+#      key-store: D://keystore.p12
+#      key-store-password: 123456
+#      key-store-type: PKCS12
+#      key-alias: tomcat
+spring:
+  #  resources:
+  #    static-locations: file:///static
+  application:
+    name: Standard
+  datasource:
+    url: jdbc:mysql://39.105.134.199:3306/standard?useSSL=false
+    username: 'root'
+    password: 'chenluo77.com'
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    # show_sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+  #    properties:
+  #      hibernate:
+  #        format_sql: true
+  #        use_sql_comments: true
+
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
